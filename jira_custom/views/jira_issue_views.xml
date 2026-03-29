@@ -20,17 +20,21 @@
         <field name="arch" type="xml">
             <form string="Jira Issue">
                 <header>
+                    <!-- Botão para enviar ao Jira -->
                     <button name="action_create_in_jira"
                             type="object"
                             string="Enviar para Jira"
                             class="btn-primary"
-                            attrs="{'invisible': [('jira_id','!=',False)]}"/>
+                            invisible="jira_id"/>
+
+                    <!-- Botão para abrir no Jira -->
                     <button name="action_open_in_jira"
                             type="object"
                             string="Abrir no Jira"
                             class="btn-secondary"
-                            attrs="{'invisible': [('name','=',False)]}"/>
+                            invisible="not name"/>
                 </header>
+
                 <sheet>
                     <group>
                         <field name="name" readonly="1"/>
@@ -49,7 +53,7 @@
     <record id="action_jira_issue" model="ir.actions.act_window">
         <field name="name">Jira Issues</field>
         <field name="res_model">jira.issue</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem id="menu_jira_root" name="Jira" sequence="10"/>
