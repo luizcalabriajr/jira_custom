@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_jira_issue_tree" model="ir.ui.view">
+        <field name="name">jira.issue.tree</field>
+        <field name="model">jira.issue</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="summary"/>
+                <field name="project_key"/>
+                <field name="status"/>
+                <field name="synced"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_jira_issue_form" model="ir.ui.view">
+        <field name="name">jira.issue.form</field>
+        <field name="model">jira.issue</field>
+        <field name="arch" type="xml">
+            <form string="Jira Issue">
+                <header>
+                    <button name="action_create_in_jira"
+                            type="object"
+                            string="Enviar para Jira"
+                            class="btn-primary"
+                            attrs="{'invisible': [('jira_id','!=',False)]}"/>
+                    <button name="action_open_in_jira"
+                            type="object"
+                            string="Abrir no Jira"
+                            class="btn-secondary"
+                            attrs="{'invisible': [('name','=',False)]}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" readonly="1"/>
+                        <field name="project_key"/>
+                        <field name="summary"/>
+                        <field name="description"/>
+                        <field name="status" readonly="1"/>
+                        <field name="jira_id" readonly="1"/>
+                        <field name="synced" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_jira_issue" model="ir.actions.act_window">
+        <field name="name">Jira Issues</field>
+        <field name="res_model">jira.issue</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_jira_root" name="Jira" sequence="10"/>
+    <menuitem id="menu_jira_issue" name="Issues"
+              parent="menu_jira_root"
+              action="action_jira_issue"
+              sequence="10"/>
+</odoo>
