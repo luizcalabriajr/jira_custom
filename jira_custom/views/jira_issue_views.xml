@@ -56,9 +56,16 @@
         <field name="view_mode">list,form</field>
     </record>
 
-    <menuitem id="menu_jira_root" name="Jira" sequence="10"/>
-    <menuitem id="menu_jira_issue" name="Issues"
-              parent="menu_jira_root"
-              action="action_jira_issue"
-              sequence="10"/>
+    <menuitem id="menu_jira_root"
+          name="Jira"
+          sequence="10"
+          groups="jira_custom.group_jira_user,jira_custom.group_jira_manager"/>
+
+    <menuitem id="menu_jira_issue"
+          name="Issues"
+          parent="menu_jira_root"
+          action="action_jira_issue"
+          sequence="10"
+          groups="jira_custom.group_jira_user,jira_custom.group_jira_manager"/>
+
 </odoo>

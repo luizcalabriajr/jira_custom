@@ -5,7 +5,9 @@
     'author': 'Luiz + Copilot',
     'depends': ['base', 'mail'],
     'data': [
-        'views/jira_issue_views.xml',
+    'security/jira_groups.xml',
+    'security/ir.model.access.csv',
+    'views/jira_issue_views.xml',
     ],
     'installable': True,
     'application': True,

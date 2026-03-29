@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+jira_issue_user,jira.issue user,model_jira_issue,jira_custom.group_jira_user,1,0,0,0
+jira_issue_manager,jira.issue manager,model_jira_issue,jira_custom.group_jira_manager,1,1,1,1

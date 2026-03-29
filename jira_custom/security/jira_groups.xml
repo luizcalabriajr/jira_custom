@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- Grupo: Jira User -->
+    <record id="group_jira_user" model="res.groups">
+        <field name="name">Jira User</field>
+        <!-- Sem category_id -->
+    </record>
+
+    <!-- Grupo: Jira Manager -->
+    <record id="group_jira_manager" model="res.groups">
+        <field name="name">Jira Manager</field>
+        <field name="implied_ids" eval="[(4, ref('jira_custom.group_jira_user'))]"/>
+        <!-- Sem category_id -->
+    </record>
+
+</odoo>
