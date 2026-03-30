@@ -16,8 +16,8 @@ class JiraIssue(models.Model):
 
     def _get_jira_headers(self):
         # ⚠️ Ajuste aqui: use sua API key e email do Jira
-        api_token = "SUA_API_KEY"
-        email = "SEU_EMAIL_NO_JIRA"
+        api_token = "ATATT3xFfGF07Laoi0xpunvcP6xAAa7tNQBLUQRREgc2lxwi-v51U3zSNxd2ag_K8T_-f0XV0_6gj6NYaJrmC2QnlgiUZmY1_cUMmxPSC_ijQVobztVZ8_XG2qjw-u_z18Ueb8XIiQfHjD44w76QdHMaiyqOZ5PGNvNm17_C4EZjz5puFwp2I40=31995979"
+        email = "luizcalabria@xipptech.com.br"
         from base64 import b64encode
         auth = b64encode(f"{email}:{api_token}".encode()).decode()
         return {
@@ -28,7 +28,7 @@ class JiraIssue(models.Model):
 
     def _get_jira_base_url(self):
         # ⚠️ Ajuste aqui: seu domínio Jira Cloud
-        return "https://SUA_ORGANIZACAO.atlassian.net"
+        return "https://xipptech.atlassian.net"
 
     def action_create_in_jira(self):
         for rec in self:

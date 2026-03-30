@@ -12,7 +12,7 @@ class HelpdeskTicket(models.Model):
     def _compute_jira_url(self):
         for rec in self:
             if rec.jira_key:
-                rec.jira_url = f"https://SUA_ORGANIZACAO.atlassian.net/browse/{rec.jira_key}"
+                rec.jira_url = f"https://xipptech.atlassian.net/browse/{rec.jira_key}"
             else:
                 rec.jira_url = False
 
