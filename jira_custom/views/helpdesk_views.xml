@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="helpdesk_ticket_form_jira" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.form.jira</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Botão no header -->
+            <xpath expr="//header" position="inside">
+                <button name="action_create_jira_from_ticket"
+                        type="object"
+                        string="Criar Issue no Jira"
+                        class="btn-primary"
+                        attrs="{'invisible': [('jira_issue_id','!=',False)]}"/>
+                
+                <button name="%(action_jira_issue)d"
+                        type="action"
+                        string="Abrir Issue no Jira"
+                        attrs="{'invisible': [('jira_issue_id','=',False)]}"/>
+            </xpath>
+
+            <!-- Campos Jira -->
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="Jira">
+                    <group>
+                        <field name="jira_issue_id" readonly="1"/>
+                        <field name="jira_key" readonly="1"/>
+                        <field name="jira_url" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>
