@@ -3,7 +3,9 @@
     'version': '18.0.1.0.0',
     'summary': 'Integração direta com Jira via API e Webhooks',
     'author': 'Luiz Calabria',
-    'depends': ['base', 'mail'],
+    'depends': ['base', 'mail',
+                'helpdesk_mgmt',  # Dependência para o módulo de helpdesk
+                ],
     'data': [
     'security/jira_groups.xml',
     'security/ir.model.access.csv',

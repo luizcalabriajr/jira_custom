@@ -4,7 +4,7 @@
     <record id="helpdesk_ticket_form_jira" model="ir.ui.view">
         <field name="name">helpdesk.ticket.form.jira</field>
         <field name="model">helpdesk.ticket</field>
-        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+        <field name="inherit_id" ref="helpdesk_mgmt.ticket_view_form"/>
         <field name="arch" type="xml">
 
             <!-- Botão no header -->
@@ -12,13 +12,12 @@
                 <button name="action_create_jira_from_ticket"
                         type="object"
                         string="Criar Issue no Jira"
-                        class="btn-primary"
-                        attrs="{'invisible': [('jira_issue_id','!=',False)]}"/>
+                        class="btn-primary"/>                        
                 
                 <button name="%(action_jira_issue)d"
                         type="action"
-                        string="Abrir Issue no Jira"
-                        attrs="{'invisible': [('jira_issue_id','=',False)]}"/>
+                        string="Abrir Issue no Jira"/>
+                        
             </xpath>
 
             <!-- Campos Jira -->
