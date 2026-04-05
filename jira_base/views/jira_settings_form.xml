@@ -1,0 +1,28 @@
+<odoo>
+    <record id="view_jira_settings_form" model="ir.ui.view">
+        <field name="name">jira.settings.form</field>
+        <field name="model">jira.settings</field>
+        <field name="arch" type="xml">
+            <form string="Configurações Jira">
+                <sheet>
+                    <group>
+                        <field name="jira_base_url"/>
+                        <field name="jira_email"/>
+                        <field name="jira_token"/>
+                        <field name="jira_account_id"/>
+                        <field name="jira_project_key"/>
+                        <field name="jira_issue_type_id"/>
+                        <field name="jira_default_labels"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_jira_settings" model="ir.actions.act_window">
+        <field name="name">Configurações Jira</field>
+        <field name="res_model">jira.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">current</field>
+    </record>
+</odoo>

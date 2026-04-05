@@ -1,0 +1,10 @@
+<odoo>
+    <menuitem id="menu_jira_root"
+              name="Jira"
+              sequence="10"/>
+
+    <menuitem id="menu_jira_settings"
+              name="Configurações Jira"
+              parent="menu_jira_root"
+              action="action_jira_settings"/>
+</odoo>
