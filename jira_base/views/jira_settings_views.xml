@@ -1,0 +1,26 @@
+<odoo>
+    <record id="view_jira_settings" model="ir.ui.view">
+        <field name="name">res.config.settings.jira</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.view_res_config_settings"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//div[@id='settings']" position="inside">
+                <div class="app_settings_block" data-string="Jira Settings">
+                    <h2>Jira Integration</h2>
+
+                    <group>
+                        <field name="jira_base_url"/>
+                        <field name="jira_email"/>
+                        <field name="jira_token" password="True"/>
+                        <field name="jira_account_id"/>
+                        <field name="jira_project_key"/>
+                        <field name="jira_issue_type_id"/>
+                        <field name="jira_default_labels"/>
+                    </group>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

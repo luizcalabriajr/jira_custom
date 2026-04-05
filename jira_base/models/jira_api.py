@@ -7,9 +7,10 @@ class JiraAPI(models.AbstractModel):
     _description = "Jira API Base"
 
     def _auth(self):
+        params = self.env["ir.config_parameter"].sudo()
         return HTTPBasicAuth(
-            self.env["ir.config_parameter"].sudo().get_param("jira.email"),
-            self.env["ir.config_parameter"].sudo().get_param("jira.token"),
+            params.get_param("jira.email"),
+            params.get_param("jira.token"),
         )
 
     def _base_url(self):
