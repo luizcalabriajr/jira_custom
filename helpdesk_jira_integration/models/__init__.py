@@ -1,2 +1,2 @@
-from . import jira_issue
 from . import helpdesk_ticket
+from . import jira_issue

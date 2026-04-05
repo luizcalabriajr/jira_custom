@@ -5,6 +5,7 @@
     'author': 'Luiz Calabria',
     "depends": ["base"],
     "data": [
+        "security/ir.model.access.csv",
         "views/jira_settings_menu.xml",
         "views/jira_settings_form.xml",
     ],

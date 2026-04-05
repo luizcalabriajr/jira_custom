@@ -23,3 +23,19 @@ class HelpdeskTicket(models.Model):
         issue.action_create_in_jira()
         self.jira_issue_id = issue.id
         self.jira_sync_status = issue.status
+
+    @api.model
+    def create(self, vals):
+        ticket = super().create(vals)
+
+        issue = ticket.env["jira.issue"].create({
+            "summary": ticket.name,
+            "description": ticket.description or "",
+        })
+
+        issue.action_create_in_jira()
+
+        ticket.jira_issue_id = issue.id
+        ticket.jira_sync_status = issue.status
+
+        return ticket
