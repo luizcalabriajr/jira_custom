@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_jira_issue_form" model="ir.ui.view">
+        <field name="name">jira.issue.form</field>
+        <field name="model">jira.issue</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="jira_id"/>
+                        <field name="summary"/>
+                        <field name="description"/>
+                        <field name="status"/>
+                        <field name="synced"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

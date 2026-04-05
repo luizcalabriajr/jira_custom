@@ -1,0 +1,25 @@
+<odoo>
+    <record id="view_helpdesk_ticket_tree_jira_sync" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.tree.jira.sync</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="jira_key"/>
+                <field name="jira_sync_status"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_helpdesk_jira_sync" model="ir.actions.act_window">
+        <field name="name">Tickets Jira</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('jira_issue_id', '!=', False)]</field>
+    </record>
+
+    <menuitem id="menu_helpdesk_jira_sync"
+              name="Tickets Jira"
+              parent="helpdesk.helpdesk_menu_root"
+              action="action_helpdesk_jira_sync"/>
+</odoo>
